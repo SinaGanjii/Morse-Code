@@ -20,7 +20,7 @@ def text_to_morse(text):
     Converts the input text into Morse Code.
     Each letter is converted to its Morse Code representation.
     Spaces in the text are translated to a '/' to indicate a new word.
-    Characters not in the MORSE_CODE_DICT are ignored.
+    Unsupported characters are kept as-is in the output.
     """
     # Convert the text to uppercase to match dictionary keys
     text = text.upper()
@@ -33,9 +33,8 @@ def text_to_morse(text):
         elif char in MORSE_CODE_DICT:
             morse_code.append(MORSE_CODE_DICT[char])
         else:
-            # Optionally, you can handle unsupported characters here.
-            # For now, we'll just skip them.
-            pass
+            # Keep unsupported characters as-is in the output
+            morse_code.append(char)
 
     # Join all Morse code parts with a space for readability
     return ' '.join(morse_code)
