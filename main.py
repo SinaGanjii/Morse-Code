@@ -41,14 +41,21 @@ def text_to_morse(text):
     return ' '.join(morse_code)
 
 def main():
-    # Ask the user for input
-    user_input = input("Enter a message to convert to Morse Code: ")
-    
-    # Convert the input text to Morse Code
-    morse_output = text_to_morse(user_input)
-    
-    # Display the result
-    print("Morse Code:", morse_output)
+    while True:
+        # Ask if user wants to continue or exit
+        print("\nEnter 'exit' to quit or any message to convert to Morse Code")
+        user_input = input("Enter your message: ")
+        
+        # Check if user wants to exit
+        if user_input.lower() == 'exit':
+            print("Goodbye!")
+            break
+        
+        # Convert the input text to Morse Code
+        morse_output = text_to_morse(user_input)
+        
+        # Display the result
+        print("Morse Code:", morse_output)
 
 if __name__ == "__main__":
     main()
