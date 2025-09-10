@@ -14,12 +14,6 @@ MORSE_CODE_DICT = {
 }
 
 def text_to_morse(text):
-    """
-    Converts the input text into Morse Code.
-    Each letter is converted to its Morse Code representation.
-    Spaces in the text are translated to a '/' to indicate a new word.
-    Unsupported characters are kept as-is in the output.
-    """
     text = text.upper()
     morse_code = []
     
